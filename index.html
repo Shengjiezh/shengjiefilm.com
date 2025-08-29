@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shengjie Film — Film Photography</title>
+  <meta name="description" content="Film photography by Shengjie — Bay Area & beyond. Prints, bookings, and stories shot on 35mm & 120." />
+  <link rel="icon" href="favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { 
+      scroll-behavior: smooth; 
+      font-family: 'Inter', sans-serif;
+    }
+    .shadow-soft { box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+    body {
+      background-color: #ffffff;
+      color: #171717;
+    }
+    .text-muted {
+      color: #6b7280;
+    }
+    .border-subtle {
+      border-color: #e5e7eb;
+    }
+    .bg-card {
+      background-color: #f9fafb;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-white/90 border-b border-subtle">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none">
+          <rect x="4" y="6" width="12" height="12" rx="2" fill="#171717" />
+          <rect x="16" y="8" width="4" height="8" rx="1" fill="#6b7280" />
+          <circle cx="10" cy="12" r="3" fill="white" />
+        </svg>
+        <span class="font-medium tracking-wide text-lg">Shengjie Film</span>
+      </a>
+      <nav class="hidden sm:flex gap-8 text-sm font-medium">
+        <a href="#work" class="hover:text-muted transition-colors">Work</a>
+        <a href="#prints" class="hover:text-muted transition-colors">Prints</a>
+        <a href="#about" class="hover:text-muted transition-colors">About</a>
+        <a href="#contact" class="hover:text-muted transition-colors">Contact</a>
+      </nav>
+      <a href="#prints" class="inline-flex items-center rounded-full px-6 py-2.5 text-sm bg-black text-white font-medium hover:bg-gray-800 transition-colors">Buy Prints</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="py-24 sm:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 items-center gap-16">
+      <div>
+        <h1 class="text-5xl sm:text-6xl font-light leading-tight tracking-tight">
+          Film over everything — moments with grain & soul.
+        </h1>
+        <p class="mt-8 text-muted text-lg max-w-xl leading-relaxed">
+          I'm Shengjie. I document quiet light and everyday poetry on 35mm & 120. 
+          Based in San Jose, available worldwide.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="#work" class="rounded-full px-8 py-3 bg-black text-white text-sm font-medium hover:bg-gray-800 transition-colors">View Work</a>
+          <a href="#prints" class="rounded-full px-8 py-3 border border-subtle text-sm font-medium hover:bg-gray-50 transition-colors">Shop Prints</a>
+        </div>
+        <div class="mt-10 flex gap-6 text-sm text-muted">
+          <a href="https://www.instagram.com/shengjie_film/" class="hover:text-gray-900 transition-colors">Instagram</a>
+          <a href="https://www.threads.net/" class="hover:text-gray-900 transition-colors">Threads</a>
+          <a href="https://x.com/" class="hover:text-gray-900 transition-colors">X</a>
+          <a href="mailto:hello@shengjiefilm.com" class="hover:text-gray-900 transition-colors">Email</a>
+        </div>
+      </div>
+      <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-soft">
+        <img src="images/hero.jpg" alt="Featured film photograph" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section id="work" class="py-24 sm:py-32 border-t border-subtle bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-end justify-between gap-6 mb-16">
+        <h2 class="text-3xl sm:text-4xl font-light">Selected Work</h2>
+        <span class="text-sm text-muted">35mm · 120 · Color & B&W</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1600&auto=format&fit=crop" alt="Street, Copenhagen – Portra 800" class="w-full h-80 object-cover rounded-xl shadow-soft" />
+        <img src="https://images.unsplash.com/photo-1519681399541-4f0b0f0b2fb0?q=80&w=1600&auto=format&fit=crop" alt="Coffee shop window – HP5" class="w-full h-80 object-cover rounded-xl shadow-soft" />
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1600&auto=format&fit=crop" alt="Sea Ranch dusk – Portra 400" class="w-full h-80 object-cover rounded-xl shadow-soft" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Prints -->
+  <section id="prints" class="py-24 sm:py-32 border-t border-subtle bg-card">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-end justify-between gap-6 mb-16">
+        <h2 class="text-3xl sm:text-4xl font-light">Print Shop</h2>
+        <span class="text-sm text-muted">Archival inks · Premium paper</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="rounded-2xl overflow-hidden bg-white shadow-soft">
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop" alt="Sea Ranch, 2024" class="w-full h-72 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-medium">Sea Ranch, 2024</h3>
+            <p class="text-muted mt-2">11×14 archival matte print — limited run</p>
+            <div class="mt-6 flex items-center justify-between">
+              <span class="text-xl font-medium">$120</span>
+              <a href="https://buy.stripe.com/test_123" target="_blank" class="rounded-full px-6 py-2.5 text-sm bg-black text-white font-medium hover:bg-gray-800 transition-colors">Buy</a>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden bg-white shadow-soft">
+          <img src="https://images.unsplash.com/photo-1519681399541-4f0b0f0b2fb0?q=80&w=1200&auto=format&fit=crop" alt="Copenhagen Lines" class="w-full h-72 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-medium">Copenhagen Lines</h3>
+            <p class="text-muted mt-2">16×20 museum rag — edition of 25</p>
+            <div class="mt-6 flex items-center justify-between">
+              <span class="text-xl font-medium">$220</span>
+              <a href="https://buy.stripe.com/test_456" target="_blank" class="rounded-full px-6 py-2.5 text-sm bg-black text-white font-medium hover:bg-gray-800 transition-colors">Buy</a>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden bg-white shadow-soft">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Big Sur Mist" class="w-full h-72 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-medium">Big Sur Mist</h3>
+            <p class="text-muted mt-2">8×10 matte — open edition</p>
+            <div class="mt-6 flex items-center justify-between">
+              <span class="text-xl font-medium">$75</span>
+              <a href="https://buy.stripe.com/test_789" target="_blank" class="rounded-full px-6 py-2.5 text-sm bg-black text-white font-medium hover:bg-gray-800 transition-colors">Buy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24 sm:py-32 border-t border-subtle bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl sm:text-4xl font-light mb-8">About Shengjie</h2>
+      <div class="space-y-6 text-lg text-muted leading-relaxed">
+        <p>
+          I founded <strong class="text-gray-900">Shengjie Film, LLC</strong> to honor the pace of film: deliberate, patient, and beautifully imperfect. 
+          From Sea Ranch getaways with my wife to quiet streets in Copenhagen, I chase honest light and the small details that make a day unforgettable.
+        </p>
+        <p>
+          Shoots available across the Bay Area and beyond — couples, families, lifestyle, and editorial. Commercial inquiries welcome.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 sm:py-32 border-t border-subtle bg-card">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-3xl sm:text-4xl font-light mb-4">Say hello</h2>
+      <p class="text-muted text-lg mb-12">Bookings, print questions, or just leave me a note. I read every message.</p>
+      <form action="https://formspree.io/f/your_action_id" method="POST" class="space-y-6">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <input required name="name" placeholder="Your name" class="w-full rounded-xl border border-subtle bg-white px-6 py-4 text-gray-900 placeholder-muted focus:outline-none focus:border-gray-400 transition-colors" />
+          <input required name="email" type="email" placeholder="Email" class="w-full rounded-xl border border-subtle bg-white px-6 py-4 text-gray-900 placeholder-muted focus:outline-none focus:border-gray-400 transition-colors" />
+        </div>
+        <input name="subject" placeholder="Subject (optional)" class="w-full rounded-xl border border-subtle bg-white px-6 py-4 text-gray-900 placeholder-muted focus:outline-none focus:border-gray-400 transition-colors" />
+        <textarea required name="message" placeholder="Your message" rows="6" class="w-full rounded-xl border border-subtle bg-white px-6 py-4 text-gray-900 placeholder-muted focus:outline-none focus:border-gray-400 transition-colors resize-none"></textarea>
+        <button class="rounded-full px-8 py-4 bg-black text-white font-medium hover:bg-gray-800 transition-colors">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-subtle bg-white">
+    <div class="max-w-7xl mx-auto px-6 py-12 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+          <rect x="4" y="6" width="12" height="12" rx="2" fill="#171717" />
+          <rect x="16" y="8" width="4" height="8" rx="1" fill="#6b7280" />
+          <circle cx="10" cy="12" r="3" fill="white" />
+        </svg>
+        <span class="text-muted">© 2025 Shengjie Film, LLC</span>
+      </div>
+      <div class="flex items-center gap-6 text-sm text-muted">
+        <a href="https://www.instagram.com/shengjie_film/" class="hover:text-gray-900 transition-colors">Instagram</a>
+        <a href="https://x.com/" class="hover:text-gray-900 transition-colors">X</a>
+        <a href="mailto:hello@shengjiefilm.com" class="hover:text-gray-900 transition-colors">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
