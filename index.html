@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shengjie Film — Film Photography</title>
   <meta name="description" content="Film photography by Shengjie — Bay Area & beyond. Prints, bookings, and stories shot on 35mm & 120." />
-  <link rel="icon" href="favicon.ico" />
+  <link rel="icon" href="logo.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="logo.png" type="image/png" sizes="16x16" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,137 +16,307 @@
       scroll-behavior: smooth; 
       font-family: 'Inter', sans-serif;
     }
-    .shadow-soft { box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
     body {
       background-color: #ffffff;
-      color: #171717;
+      color: #1a1a1a;
+      font-weight: 300;
+      line-height: 1.6;
     }
     .text-muted {
-      color: #6b7280;
+      color: #666666;
+    }
+    .text-primary {
+      color: #1a1a1a;
     }
     .border-subtle {
-      border-color: #e5e7eb;
+      border-color: #e8e8e8;
     }
-    .bg-card {
-      background-color: #f9fafb;
+    .bg-primary {
+      background-color: #1a1a1a;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 300;
+      letter-spacing: -0.02em;
+    }
+    .font-medium {
+      font-weight: 400;
+    }
+    .font-semibold {
+      font-weight: 500;
+    }
+    .font-bold {
+      font-weight: 600;
+    }
+    
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(4px);
+    }
+    
+    .modal-content {
+      position: relative;
+      margin: auto;
+      display: block;
+      max-width: 70%;
+      max-height: 95%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    .modal-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+    }
+    
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
     }
   </style>
 </head>
 <body class="bg-white text-gray-900">
   <!-- Header -->
-  <header class="sticky top-0 z-40 backdrop-blur bg-white/90 border-b border-subtle">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#home" class="flex items-center gap-3">
-        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none">
-          <rect x="4" y="6" width="12" height="12" rx="2" fill="#171717" />
-          <rect x="16" y="8" width="4" height="8" rx="1" fill="#6b7280" />
-          <circle cx="10" cy="12" r="3" fill="white" />
-        </svg>
-        <span class="font-medium tracking-wide text-lg">Shengjie Film</span>
+  <header class="sticky top-0 z-40 backdrop-blur bg-white/95 border-b border-subtle">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+      <a href="#portfolio" class="flex items-center gap-3">
+        <img src="logo.png" alt="Shengjie Film Logo" class="w-10 h-10 object-contain">
+        <span class="font-medium tracking-wide text-2xl text-primary">Shengjie Film</span>
       </a>
-      <nav class="hidden sm:flex gap-8 text-sm font-medium">
-        <a href="#work" class="hover:text-muted transition-colors">Work</a>
-        <a href="#prints" class="hover:text-muted transition-colors">Prints</a>
-        <a href="#about" class="hover:text-muted transition-colors">About</a>
-        <a href="#contact" class="hover:text-muted transition-colors">Contact</a>
+      <nav class="hidden sm:flex gap-10 text-sm font-medium ml-auto">
+        <a href="#portfolio" class="hover:text-muted transition-colors duration-200">Portfolio</a>
+        <a href="#prints" class="hover:text-muted transition-colors duration-200">Prints</a>
+        <a href="#travel" class="hover:text-muted transition-colors duration-200">Travel</a>
+        <a href="#about" class="hover:text-muted transition-colors duration-200">About</a>
+        <a href="#contact" class="hover:text-muted transition-colors duration-200">Contact</a>
       </nav>
-      <a href="#prints" class="inline-flex items-center rounded-full px-6 py-2.5 text-sm bg-black text-white font-medium hover:bg-gray-800 transition-colors">Buy Prints</a>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="py-24 sm:py-32 bg-white">
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 items-center gap-16">
-      <div>
-        <h1 class="text-5xl sm:text-6xl font-light leading-tight tracking-tight">
-          Film over everything — moments with grain & soul.
-        </h1>
-        <p class="mt-8 text-muted text-lg max-w-xl leading-relaxed">
-          I'm Shengjie. I document quiet light and everyday poetry on 35mm & 120. 
-          Based in San Jose, available worldwide.
-        </p>
-        <div class="mt-10 flex flex-wrap gap-4">
-          <a href="#work" class="rounded-full px-8 py-3 bg-black text-white text-sm font-medium hover:bg-gray-800 transition-colors">View Work</a>
-          <a href="#prints" class="rounded-full px-8 py-3 border border-subtle text-sm font-medium hover:bg-gray-50 transition-colors">Shop Prints</a>
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-8 hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <!-- Photo 1 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/1.jpg')">
+          <img src="images/1.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
         </div>
-        <div class="mt-10 flex gap-6 text-sm text-muted">
-          <a href="https://www.instagram.com/shengjie_film/" class="hover:text-gray-900 transition-colors">Instagram</a>
-          <a href="https://www.threads.net/" class="hover:text-gray-900 transition-colors">Threads</a>
-          <a href="https://x.com/" class="hover:text-gray-900 transition-colors">X</a>
-          <a href="mailto:hello@shengjiefilm.com" class="hover:text-gray-900 transition-colors">Email</a>
+        
+        <!-- Photo 2 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/2.jpg')">
+          <img src="images/2.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
         </div>
-      </div>
-      <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-soft">
-        <img src="images/hero.jpg" alt="Featured film photograph" class="w-full h-full object-cover">
+        
+        <!-- Photo 3 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/3.jpg')">
+          <img src="images/3.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+        
+        <!-- Photo 4 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/4.jpg')">
+          <img src="images/4.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+        
+        <!-- Photo 5 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/5.jpg')">
+          <img src="images/5.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+        
+        <!-- Photo 6 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/6.jpg')">
+          <img src="images/6.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+        
+        <!-- Photo 7 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/7.jpg')">
+          <img src="images/7.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+        
+        <!-- Photo 8 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/8.jpg')">
+          <img src="images/8.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+        
+        <!-- Photo 9 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/9.jpg')">
+          <img src="images/9.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+        
+        <!-- Photo 10 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/10.jpg')">
+          <img src="images/10.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+        
+        <!-- Photo 11 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/11.jpg')">
+          <img src="images/11.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+        
+        <!-- Photo 12 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/12.jpg')">
+          <img src="images/12.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+        
+        <!-- Photo 13 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/13.jpg')">
+          <img src="images/13.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+        
+        <!-- Photo 14 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/14.jpg')">
+          <img src="images/14.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+        
+        <!-- Photo 15 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/15.jpg')">
+          <img src="images/15.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+        
+        <!-- Photo 16 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/16.jpg')">
+          <img src="images/16.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+        
+        <!-- Photo 17 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/17.jpg')">
+          <img src="images/17.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+        
+        <!-- Photo 18 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/18.jpg')">
+          <img src="images/18.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+        
+        <!-- Photo 19 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/19.jpg')">
+          <img src="images/19.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+        
+        <!-- Photo 19 -->
+        <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/R1-09395-0007.jpg')">
+          <img src="images/R1-09395-0007.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Work -->
-  <section id="work" class="py-24 sm:py-32 border-t border-subtle bg-white">
+  <!-- Travel -->
+  <section id="travel" class="py-24 sm:py-32 border-t border-subtle bg-white hidden">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="flex items-end justify-between gap-6 mb-16">
-        <h2 class="text-3xl sm:text-4xl font-light">Selected Work</h2>
-        <span class="text-sm text-muted">35mm · 120 · Color & B&W</span>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1600&auto=format&fit=crop" alt="Street, Copenhagen – Portra 800" class="w-full h-80 object-cover rounded-xl shadow-soft" />
-        <img src="https://images.unsplash.com/photo-1519681399541-4f0b0f0b2fb0?q=80&w=1600&auto=format&fit=crop" alt="Coffee shop window – HP5" class="w-full h-80 object-cover rounded-xl shadow-soft" />
-        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1600&auto=format&fit=crop" alt="Sea Ranch dusk – Portra 400" class="w-full h-80 object-cover rounded-xl shadow-soft" />
+
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <!-- Copenhagen -->
+        <div>
+          <a href="copenhagen.html" class="block group">
+            <div class="aspect-[4/5] overflow-hidden relative">
+              <img src="images/Copenhagen/1.jpg" alt="Copenhagen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium">View All Photos</span>
+              </div>
+            </div>
+          </a>
+          <a href="copenhagen.html" class="block">
+            <h3 class="text-xl font-medium mt-6 hover:text-muted transition-colors duration-200 cursor-pointer text-primary">Copenhagen</h3>
+          </a>
+        </div>
+
+        <!-- Half Moon Bay -->
+        <div>
+          <a href="half-moon-bay.html" class="block group">
+            <div class="aspect-[4/5] overflow-hidden relative">
+              <img src="images/Half Moon Bay/1.jpg" alt="Half Moon Bay" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium">View All Photos</span>
+              </div>
+            </div>
+          </a>
+          <a href="half-moon-bay.html" class="block">
+            <h3 class="text-xl font-medium mt-6 hover:text-muted transition-colors duration-200 cursor-pointer text-primary">Half Moon Bay</h3>
+          </a>
+        </div>
+
+        <!-- Japan -->
+        <div>
+          <a href="japan.html" class="block group">
+            <div class="aspect-[4/5] overflow-hidden relative">
+              <img src="images/Japan/1.jpg" alt="Japan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium">View All Photos</span>
+              </div>
+            </div>
+          </a>
+          <a href="japan.html" class="block">
+            <h3 class="text-xl font-medium mt-6 hover:text-muted transition-colors duration-200 cursor-pointer text-primary">Japan</h3>
+          </a>
+        </div>
+
+        <!-- Niles -->
+        <div>
+          <a href="niles.html" class="block group">
+            <div class="aspect-[4/5] overflow-hidden relative">
+              <img src="images/Niles/1.jpg" alt="Niles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium">View All Photos</span>
+              </div>
+            </div>
+          </a>
+          <a href="niles.html" class="block">
+            <h3 class="text-xl font-medium mt-6 hover:text-muted transition-colors duration-200 cursor-pointer text-primary">Niles</h3>
+          </a>
+        </div>
+
+        <!-- Marine County Civic Center -->
+        <div>
+          <a href="marine-county-civic-center.html" class="block group">
+            <div class="aspect-[4/5] overflow-hidden relative">
+              <img src="images/Marine County Civic Center/1.jpg" alt="Marine County Civic Center" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                <span class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium">View All Photos</span>
+              </div>
+            </div>
+          </a>
+          <a href="marine-county-civic-center.html" class="block">
+            <h3 class="text-xl font-medium mt-6 hover:text-muted transition-colors duration-200 cursor-pointer text-primary">Marine County Civic Center</h3>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Prints -->
-  <section id="prints" class="py-24 sm:py-32 border-t border-subtle bg-card">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex items-end justify-between gap-6 mb-16">
-        <h2 class="text-3xl sm:text-4xl font-light">Print Shop</h2>
-        <span class="text-sm text-muted">Archival inks · Premium paper</span>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="rounded-2xl overflow-hidden bg-white shadow-soft">
-          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop" alt="Sea Ranch, 2024" class="w-full h-72 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-medium">Sea Ranch, 2024</h3>
-            <p class="text-muted mt-2">11×14 archival matte print — limited run</p>
-            <div class="mt-6 flex items-center justify-between">
-              <span class="text-xl font-medium">$120</span>
-              <a href="https://buy.stripe.com/test_123" target="_blank" class="rounded-full px-6 py-2.5 text-sm bg-black text-white font-medium hover:bg-gray-800 transition-colors">Buy</a>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-2xl overflow-hidden bg-white shadow-soft">
-          <img src="https://images.unsplash.com/photo-1519681399541-4f0b0f0b2fb0?q=80&w=1200&auto=format&fit=crop" alt="Copenhagen Lines" class="w-full h-72 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-medium">Copenhagen Lines</h3>
-            <p class="text-muted mt-2">16×20 museum rag — edition of 25</p>
-            <div class="mt-6 flex items-center justify-between">
-              <span class="text-xl font-medium">$220</span>
-              <a href="https://buy.stripe.com/test_456" target="_blank" class="rounded-full px-6 py-2.5 text-sm bg-black text-white font-medium hover:bg-gray-800 transition-colors">Buy</a>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-2xl overflow-hidden bg-white shadow-soft">
-          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Big Sur Mist" class="w-full h-72 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-medium">Big Sur Mist</h3>
-            <p class="text-muted mt-2">8×10 matte — open edition</p>
-            <div class="mt-6 flex items-center justify-between">
-              <span class="text-xl font-medium">$75</span>
-              <a href="https://buy.stripe.com/test_789" target="_blank" class="rounded-full px-6 py-2.5 text-sm bg-black text-white font-medium hover:bg-gray-800 transition-colors">Buy</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section id="prints" class="hidden">
+    <!-- This section is intentionally empty - redirects to external store -->
   </section>
 
   <!-- About -->
-  <section id="about" class="py-24 sm:py-32 border-t border-subtle bg-white">
+  <section id="about" class="py-24 sm:py-32 border-t border-subtle bg-white hidden">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl sm:text-4xl font-light mb-8">About Shengjie</h2>
-      <div class="space-y-6 text-lg text-muted leading-relaxed">
+      <h2 class="text-4xl sm:text-5xl font-light mb-12 text-primary">About Shengjie</h2>
+      <div class="space-y-8 text-lg text-muted leading-relaxed">
         <p>
           I founded <strong class="text-gray-900">Shengjie Film, LLC</strong> to honor the pace of film: deliberate, patient, and beautifully imperfect. 
           From Sea Ranch getaways with my wife to quiet streets in Copenhagen, I chase honest light and the small details that make a day unforgettable.
@@ -158,40 +329,143 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-24 sm:py-32 border-t border-subtle bg-card">
+  <section id="contact" class="py-24 sm:py-32 border-t border-subtle bg-gray-50 hidden">
     <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-3xl sm:text-4xl font-light mb-4">Say hello</h2>
-      <p class="text-muted text-lg mb-12">Bookings, print questions, or just leave me a note. I read every message.</p>
-      <form action="https://formspree.io/f/your_action_id" method="POST" class="space-y-6">
-        <div class="grid sm:grid-cols-2 gap-6">
-          <input required name="name" placeholder="Your name" class="w-full rounded-xl border border-subtle bg-white px-6 py-4 text-gray-900 placeholder-muted focus:outline-none focus:border-gray-400 transition-colors" />
-          <input required name="email" type="email" placeholder="Email" class="w-full rounded-xl border border-subtle bg-white px-6 py-4 text-gray-900 placeholder-muted focus:outline-none focus:border-gray-400 transition-colors" />
+      <h2 class="text-4xl sm:text-5xl font-light mb-6 text-primary">Say hello</h2>
+      <p class="text-muted text-lg mb-16">Bookings, print questions, or just leave me a note. I read every message.</p>
+      <form action="https://formspree.io/f/your_action_id" method="POST" class="space-y-8">
+        <div class="grid sm:grid-cols-2 gap-8">
+          <input required name="name" placeholder="Your name" class="w-full border-b border-subtle bg-transparent px-0 py-4 text-primary placeholder-muted focus:outline-none focus:border-primary transition-colors" />
+          <input required name="email" type="email" placeholder="Email" class="w-full border-b border-subtle bg-transparent px-0 py-4 text-primary placeholder-muted focus:outline-none focus:border-primary transition-colors" />
         </div>
-        <input name="subject" placeholder="Subject (optional)" class="w-full rounded-xl border border-subtle bg-white px-6 py-4 text-gray-900 placeholder-muted focus:outline-none focus:border-gray-400 transition-colors" />
-        <textarea required name="message" placeholder="Your message" rows="6" class="w-full rounded-xl border border-subtle bg-white px-6 py-4 text-gray-900 placeholder-muted focus:outline-none focus:border-gray-400 transition-colors resize-none"></textarea>
-        <button class="rounded-full px-8 py-4 bg-black text-white font-medium hover:bg-gray-800 transition-colors">Send Message</button>
+        <input name="subject" placeholder="Subject (optional)" class="w-full border-b border-subtle bg-transparent px-0 py-4 text-primary placeholder-muted focus:outline-none focus:border-primary transition-colors" />
+        <textarea required name="message" placeholder="Your message" rows="6" class="w-full border-b border-subtle bg-transparent px-0 py-4 text-primary placeholder-muted focus:outline-none focus:border-primary transition-colors resize-none"></textarea>
+        <button class="px-10 py-4 bg-primary text-white font-medium hover:bg-black transition-colors duration-200">Send Message</button>
       </form>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="border-t border-subtle bg-white">
-    <div class="max-w-7xl mx-auto px-6 py-12 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <div class="max-w-7xl mx-auto px-6 py-16 flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-3">
-        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
-          <rect x="4" y="6" width="12" height="12" rx="2" fill="#171717" />
-          <rect x="16" y="8" width="4" height="8" rx="1" fill="#6b7280" />
-          <circle cx="10" cy="12" r="3" fill="white" />
-        </svg>
-        <span class="text-muted">© 2025 Shengjie Film, LLC</span>
+        <img src="logo.png" alt="Shengjie Film Logo" class="w-9 h-9 object-contain">
+        <span class="text-muted text-sm">© 2025 Shengjie Film, LLC</span>
       </div>
-      <div class="flex items-center gap-6 text-sm text-muted">
-        <a href="https://www.instagram.com/shengjie_film/" class="hover:text-gray-900 transition-colors">Instagram</a>
-        <a href="https://x.com/" class="hover:text-gray-900 transition-colors">X</a>
-        <a href="mailto:hello@shengjiefilm.com" class="hover:text-gray-900 transition-colors">Email</a>
+      <div class="flex items-center gap-8 text-sm text-muted">
+        <a href="https://www.instagram.com/shengjie_film/" class="hover:text-gray-900 transition-colors" aria-label="Instagram">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="mailto:shengjiefilm@gmail.com" class="hover:text-gray-900 transition-colors" aria-label="Email">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
+          </svg>
+        </a>
       </div>
     </div>
   </footer>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <img id="modalImage" class="modal-image" src="" alt="Enlarged photo">
+    </div>
+  </div>
+
+  <script>
+    // Tab navigation functionality
+    function showSection(sectionId) {
+      // Hide all sections
+      const sections = ['portfolio', 'prints', 'travel', 'about', 'contact'];
+      sections.forEach(id => {
+        const section = document.getElementById(id);
+        if (section) {
+          section.classList.add('hidden');
+        }
+      });
+      
+      // Show the selected section
+      const selectedSection = document.getElementById(sectionId);
+      if (selectedSection) {
+        selectedSection.classList.remove('hidden');
+      }
+      
+      // Update active navigation state
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => {
+        link.classList.remove('text-gray-900');
+        link.classList.add('text-gray-600');
+      });
+      
+      const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+      if (activeLink) {
+        activeLink.classList.remove('text-gray-600');
+        activeLink.classList.add('text-gray-900');
+      }
+    }
+    
+    // Add click event listeners to navigation links
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const sectionId = this.getAttribute('href').substring(1);
+          
+          // Special handling for prints tab - redirect to external store
+          if (sectionId === 'prints') {
+            window.open('https://shengjiefilm.darkroom.com/', '_blank');
+            return;
+          }
+          
+          showSection(sectionId);
+        });
+      });
+      
+      // Check if there's a stored tab state (for back navigation from destination pages)
+      const storedTab = localStorage.getItem('activeTab');
+      if (storedTab) {
+        showSection(storedTab);
+        localStorage.removeItem('activeTab'); // Clear the stored state
+      } else {
+        // Show portfolio by default
+        showSection('portfolio');
+      }
+    });
+      
+      // Modal functions
+      function openModal(imageSrc) {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        modal.style.display = 'block';
+        modalImg.src = imageSrc;
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+      }
+      
+      function closeModal() {
+        const modal = document.getElementById('imageModal');
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+      }
+      
+      // Close modal when clicking outside the image
+      window.onclick = function(event) {
+        const modal = document.getElementById('imageModal');
+        if (event.target === modal) {
+          closeModal();
+        }
+      }
+      
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          closeModal();
+        }
+      });
+    </script>
 
 </body>
 </html>
