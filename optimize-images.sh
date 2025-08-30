@@ -66,10 +66,55 @@ optimize_directory() {
     done
 }
 
-# Optimize main portfolio images
-echo ""
-echo "📸 Optimizing Portfolio Images..."
-optimize_directory "images" "images/optimized"
+# Special function to optimize portfolio images in correct order
+optimize_portfolio_images() {
+    echo ""
+    echo "📸 Optimizing Portfolio Images (in correct order)..."
+    
+    # Create optimized directory
+    mkdir -p "images/optimized"
+    
+    # Process portfolio images in numerical order (1.jpg, 2.jpg, etc.)
+    for i in {1..19}; do
+        source_file="images/$i.jpg"
+        target_file="images/optimized/$i.jpg"
+        
+        if [ -f "$source_file" ]; then
+            echo "  🔄 Optimizing: $i.jpg"
+            
+            # Get original image dimensions
+            original_width=$(sips -g pixelWidth "$source_file" | tail -1 | awk '{print $2}')
+            original_height=$(sips -g pixelHeight "$source_file" | tail -1 | awk '{print $2}')
+            
+            # Calculate optimal dimensions while maintaining aspect ratio
+            max_width=2000
+            max_height=2000
+            
+            if [ "$original_width" -gt "$max_width" ] || [ "$original_height" -gt "$max_height" ]; then
+                # Resize if image is larger than max dimensions
+                sips -Z $max_width -s format jpeg -s formatOptions 90 "$source_file" --out "$target_file" > /dev/null 2>&1
+            else
+                # Just optimize quality without resizing if image is already small enough
+                sips -s format jpeg -s formatOptions 90 "$source_file" --out "$target_file" > /dev/null 2>&1
+            fi
+            
+            # Get file sizes for comparison
+            original_size=$(stat -f%z "$source_file" 2>/dev/null || stat -c%s "$source_file" 2>/dev/null)
+            optimized_size=$(stat -f%z "$target_file" 2>/dev/null || stat -c%s "$target_file" 2>/dev/null)
+            
+            if [ "$original_size" -gt 0 ] && [ "$optimized_size" -gt 0 ]; then
+                savings=$((original_size - optimized_size))
+                savings_percent=$((savings * 100 / original_size))
+                echo "    ✅ Saved: ${savings_percent}% (${savings} bytes) - Quality: 90% JPEG"
+            fi
+        else
+            echo "  ⚠️  Missing: $i.jpg"
+        fi
+    done
+}
+
+# Optimize portfolio images in correct order
+optimize_portfolio_images
 
 # Optimize travel destination images
 echo ""
@@ -95,5 +140,6 @@ echo "- Run this script after adding new images"
 echo "- The script only processes new/changed images"
 echo "- All optimized images are saved in 'images/optimized/'"
 echo "- Quality settings: 90% JPEG, max 2000px width/height"
+echo "- Portfolio images are processed in correct numerical order"
 echo ""
 echo "🚀 Your website is now optimized and ready to deploy!"
