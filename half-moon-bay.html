@@ -88,7 +88,7 @@
       </a>
       <nav class="hidden sm:flex gap-10 text-sm font-medium">
         <a href="index.html#portfolio" class="hover:text-muted transition-colors duration-200">Portfolio</a>
-        <a href="index.html#prints" class="hover:text-muted transition-colors duration-200">Prints</a>
+        <a href="index.html#prints" class="hover:text-muted transition-colors duration-200" onclick="handleDesktopNav('prints', event)">Prints</a>
         <a href="index.html#travel" class="hover:text-muted transition-colors duration-200">Travel</a>
         <a href="index.html#about" class="hover:text-muted transition-colors duration-200">About</a>
         <a href="index.html#contact" class="hover:text-muted transition-colors duration-200">Contact</a>
@@ -277,6 +277,22 @@
       
       // Close mobile menu
       closeMobileMenu();
+      
+      // Special handling for prints tab - redirect to external store
+      if (sectionId === 'prints') {
+        window.open('https://shengjiefilm.darkroom.com/', '_blank');
+        return;
+      }
+      
+      // For other sections, navigate to main page with the section hash
+      window.location.href = 'index.html#' + sectionId;
+    }
+    
+    function handleDesktopNav(sectionId, event) {
+      // Prevent default link behavior
+      if (event) {
+        event.preventDefault();
+      }
       
       // Special handling for prints tab - redirect to external store
       if (sectionId === 'prints') {
