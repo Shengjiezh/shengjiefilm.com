@@ -7,10 +7,24 @@
   <meta name="description" content="Film photography by Shengjie — Bay Area & beyond. Prints, bookings, and stories shot on 35mm & 120." />
   <link rel="icon" href="logo.png" type="image/png" sizes="32x32" />
   <link rel="icon" href="logo.png" type="image/png" sizes="16x16" />
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="logo.png" as="image" type="image/png">
+  <link rel="preload" href="images/optimized/1.jpg" as="image" type="image/jpeg">
+  <link rel="preload" href="images/optimized/2.jpg" as="image" type="image/jpeg">
+  <link rel="preload" href="images/optimized/3.jpg" as="image" type="image/jpeg">
+  <link rel="preload" href="images/optimized/4.jpg" as="image" type="image/jpeg">
+  <link rel="preload" href="images/optimized/5.jpg" as="image" type="image/jpeg">
+  <link rel="preload" href="images/optimized/6.jpg" as="image" type="image/jpeg">
+  <link rel="preload" href="images/optimized/7.jpg" as="image" type="image/jpeg">
+  <link rel="preload" href="images/optimized/8.jpg" as="image" type="image/jpeg">
+  <link rel="preload" href="images/optimized/9.jpg" as="image" type="image/jpeg">
+  <link rel="preload" href="images/optimized/10.jpg" as="image" type="image/jpeg">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <style>
     html { 
       scroll-behavior: smooth; 
@@ -143,102 +157,102 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         <!-- Photo 1 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/1.jpg')">
-          <img src="images/optimized/1.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/1.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 2 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/2.jpg')">
-          <img src="images/optimized/2.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/2.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 3 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/3.jpg')">
-          <img src="images/optimized/3.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/3.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 4 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/4.jpg')">
-          <img src="images/optimized/4.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/4.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 5 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/5.jpg')">
-          <img src="images/optimized/5.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/5.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 6 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/6.jpg')">
-          <img src="images/optimized/6.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/6.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 7 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/7.jpg')">
-          <img src="images/optimized/7.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/7.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 8 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/8.jpg')">
-          <img src="images/optimized/8.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/8.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 9 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/9.jpg')">
-          <img src="images/optimized/9.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/9.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 10 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/10.jpg')">
-          <img src="images/optimized/10.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/10.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 11 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/11.jpg')">
-          <img src="images/optimized/11.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/11.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 12 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/12.jpg')">
-          <img src="images/optimized/12.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/12.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 13 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/13.jpg')">
-          <img src="images/optimized/13.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/13.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 14 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/14.jpg')">
-          <img src="images/optimized/14.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/14.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 15 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/15.jpg')">
-          <img src="images/optimized/15.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/15.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 16 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/16.jpg')">
-          <img src="images/optimized/16.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/16.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 17 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/17.jpg')">
-          <img src="images/optimized/17.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/17.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 18 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/18.jpg')">
-          <img src="images/optimized/18.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/18.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 19 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/optimized/19.jpg')">
-          <img src="images/optimized/19.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+          <img src="images/optimized/19.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" loading="lazy">
         </div>
         
         <!-- Photo 19 -->
         <div class="aspect-[4/5] overflow-hidden cursor-pointer" onclick="openModal('images/R1-09395-0007.jpg')">
-          <img src="images/R1-09395-0007.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          <img src="images/R1-09395-0007.jpg" alt="Film photograph" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
         </div>
       </div>
     </div>
@@ -397,164 +411,181 @@
   </div>
 
   <script>
-    // Tab navigation functionality
-    function showSection(sectionId) {
-      // Hide all sections
+    // Performance optimized JavaScript
+    (function() {
+      'use strict';
+      
+      // Cache DOM elements for better performance
       const sections = ['portfolio', 'prints', 'travel', 'about', 'contact'];
-      sections.forEach(id => {
-        const section = document.getElementById(id);
-        if (section) {
-          section.classList.add('hidden');
-        }
-      });
+      const sectionElements = {};
+      const navLinks = {};
+      let modal, modalImg, mobileMenu, mobileMenuButton;
       
-      // Show the selected section
-      const selectedSection = document.getElementById(sectionId);
-      if (selectedSection) {
-        selectedSection.classList.remove('hidden');
-      }
-      
-      // Update URL hash to reflect current section
-      window.location.hash = '#' + sectionId;
-      
-      // Update active navigation state
-      const navLinks = document.querySelectorAll('nav a');
-      navLinks.forEach(link => {
-        link.classList.remove('text-gray-900');
-        link.classList.add('text-gray-600');
-      });
-      
-      const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
-      if (activeLink) {
-        activeLink.classList.remove('text-gray-600');
-        activeLink.classList.add('text-gray-900');
-      }
-    }
-    
-    // Add click event listeners to navigation links
-    document.addEventListener('DOMContentLoaded', function() {
-      const navLinks = document.querySelectorAll('nav a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          const sectionId = this.getAttribute('href').substring(1);
-          
-          // Special handling for prints tab - redirect to external store
-          if (sectionId === 'prints') {
-            window.open('https://shengjiefilm.darkroom.com/', '_blank');
-            return;
-          }
-          
-          showSection(sectionId);
+      // Initialize DOM cache
+      function initCache() {
+        sections.forEach(id => {
+          sectionElements[id] = document.getElementById(id);
         });
-      });
-      
-      // Check if there's a stored tab state (for back navigation from destination pages)
-      const storedTab = localStorage.getItem('activeTab');
-      if (storedTab) {
-        showSection(storedTab);
-        localStorage.removeItem('activeTab'); // Clear the stored state
-      } else {
-        // Check if there's a hash in the URL
-        const hash = window.location.hash.substring(1);
-        if (hash && ['portfolio', 'prints', 'travel', 'about', 'contact'].includes(hash)) {
-          showSection(hash);
-        } else {
-          // Show portfolio by default
-          showSection('portfolio');
-        }
-      }
-      
-      // Listen for hash changes (when logo is clicked or browser back/forward)
-      window.addEventListener('hashchange', function() {
-        const hash = window.location.hash.substring(1);
-        if (hash && ['portfolio', 'prints', 'travel', 'about', 'contact'].includes(hash)) {
-          showSection(hash);
-        }
-      });
-    });
-      
-      // Modal functions
-      function openModal(imageSrc) {
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-        modal.style.display = 'block';
-        modalImg.src = imageSrc;
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
-      }
-      
-      function closeModal() {
-        const modal = document.getElementById('imageModal');
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Restore scrolling
-      }
-      
-      // Close modal when clicking outside the image
-      window.onclick = function(event) {
-        const modal = document.getElementById('imageModal');
-        if (event.target === modal) {
-          closeModal();
-        }
-      }
-      
-      // Close modal with Escape key
-      document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-          closeModal();
-        }
-      });
-      
-      // Mobile menu functions
-      function toggleMobileMenu() {
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
         
-        if (mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.remove('hidden');
-          // Change hamburger to X
-          mobileMenuButton.innerHTML = `
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          `;
-        } else {
-          mobileMenu.classList.add('hidden');
-          // Change X back to hamburger
-          mobileMenuButton.innerHTML = `
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          `;
+        // Cache navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+          const href = link.getAttribute('href');
+          if (href) {
+            navLinks[href] = link;
+          }
+        });
+        
+        // Cache modal elements
+        modal = document.getElementById('imageModal');
+        modalImg = document.getElementById('modalImage');
+        mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton = document.getElementById('mobile-menu-button');
+      }
+      
+      // Optimized section navigation
+      function showSection(sectionId) {
+        // Hide all sections efficiently
+        sections.forEach(id => {
+          if (sectionElements[id]) {
+            sectionElements[id].classList.add('hidden');
+          }
+        });
+        
+        // Show selected section
+        if (sectionElements[sectionId]) {
+          sectionElements[sectionId].classList.remove('hidden');
+        }
+        
+        // Update URL hash
+        window.location.hash = '#' + sectionId;
+        
+        // Update navigation state efficiently
+        Object.values(navLinks).forEach(link => {
+          link.classList.remove('text-gray-900');
+          link.classList.add('text-gray-600');
+        });
+        
+        const activeLink = navLinks['#' + sectionId];
+        if (activeLink) {
+          activeLink.classList.remove('text-gray-600');
+          activeLink.classList.add('text-gray-900');
         }
       }
       
-      function closeMobileMenu() {
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        
-        mobileMenu.classList.add('hidden');
-        // Change X back to hamburger
-        mobileMenuButton.innerHTML = `
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        `;
-      }
-      
-      function handleMobileNav(sectionId) {
-        // Close mobile menu
-        closeMobileMenu();
-        
-        // Special handling for prints tab - redirect to external store
+      // Optimized navigation handler
+      function handleNavigation(sectionId) {
         if (sectionId === 'prints') {
           window.open('https://shengjiefilm.darkroom.com/', '_blank');
           return;
         }
-        
-        // Handle other sections
         showSection(sectionId);
       }
-    </script>
+      
+      // Optimized modal functions
+      function openModal(imageSrc) {
+        if (modal && modalImg) {
+          modal.style.display = 'block';
+          modalImg.src = imageSrc;
+          document.body.style.overflow = 'hidden';
+        }
+      }
+      
+      function closeModal() {
+        if (modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      }
+      
+      // Optimized mobile menu functions
+      function toggleMobileMenu() {
+        if (!mobileMenu || !mobileMenuButton) return;
+        
+        const isHidden = mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden', !isHidden);
+        
+        // Update button icon
+        mobileMenuButton.innerHTML = isHidden ? 
+          '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>' :
+          '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
+      }
+      
+      function closeMobileMenu() {
+        if (mobileMenu && mobileMenuButton) {
+          mobileMenu.classList.add('hidden');
+          mobileMenuButton.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
+        }
+      }
+      
+      function handleMobileNav(sectionId) {
+        closeMobileMenu();
+        handleNavigation(sectionId);
+      }
+      
+      // Event handlers
+      function handleNavClick(e) {
+        e.preventDefault();
+        const sectionId = this.getAttribute('href').substring(1);
+        handleNavigation(sectionId);
+      }
+      
+      function handleModalClick(e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      }
+      
+      function handleKeydown(e) {
+        if (e.key === 'Escape') {
+          closeModal();
+        }
+      }
+      
+      // Initialize everything when DOM is ready
+      document.addEventListener('DOMContentLoaded', function() {
+        initCache();
+        
+        // Add optimized event listeners
+        Object.values(navLinks).forEach(link => {
+          link.addEventListener('click', handleNavClick);
+        });
+        
+        // Handle initial state
+        const storedTab = localStorage.getItem('activeTab');
+        if (storedTab) {
+          showSection(storedTab);
+          localStorage.removeItem('activeTab');
+        } else {
+          const hash = window.location.hash.substring(1);
+          if (hash && sections.includes(hash)) {
+            showSection(hash);
+          } else {
+            showSection('portfolio');
+          }
+        }
+        
+        // Hash change listener
+        window.addEventListener('hashchange', function() {
+          const hash = window.location.hash.substring(1);
+          if (hash && sections.includes(hash)) {
+            showSection(hash);
+          }
+        });
+        
+        // Modal event listeners
+        window.addEventListener('click', handleModalClick);
+        document.addEventListener('keydown', handleKeydown);
+      });
+      
+      // Expose functions globally for onclick handlers
+      window.openModal = openModal;
+      window.closeModal = closeModal;
+      window.toggleMobileMenu = toggleMobileMenu;
+      window.closeMobileMenu = closeMobileMenu;
+      window.handleMobileNav = handleMobileNav;
+      window.showSection = showSection;
+    })();
+  </script>
 
 </body>
 </html>
