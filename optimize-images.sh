@@ -33,7 +33,23 @@ optimize_directory() {
         # Only process if target doesn't exist or source is newer
         if [ ! -f "$target_path" ] || [ "$image" -nt "$target_path" ]; then
             echo "  🔄 Optimizing: $filename"
-            sips -Z 1200 -s format jpeg -s formatOptions 80 "$image" --out "$target_path" > /dev/null 2>&1
+            
+            # Get original image dimensions
+            original_width=$(sips -g pixelWidth "$image" | tail -1 | awk '{print $2}')
+            original_height=$(sips -g pixelHeight "$image" | tail -1 | awk '{print $2}')
+            
+            # Calculate optimal dimensions while maintaining aspect ratio
+            # For better quality: use 2000px max width for desktop, 1500px for mobile
+            max_width=2000
+            max_height=2000
+            
+            if [ "$original_width" -gt "$max_width" ] || [ "$original_height" -gt "$max_height" ]; then
+                # Resize if image is larger than max dimensions
+                sips -Z $max_width -s format jpeg -s formatOptions 90 "$image" --out "$target_path" > /dev/null 2>&1
+            else
+                # Just optimize quality without resizing if image is already small enough
+                sips -s format jpeg -s formatOptions 90 "$image" --out "$target_path" > /dev/null 2>&1
+            fi
             
             # Get file sizes for comparison
             original_size=$(stat -f%z "$image" 2>/dev/null || stat -c%s "$image" 2>/dev/null)
@@ -42,7 +58,7 @@ optimize_directory() {
             if [ "$original_size" -gt 0 ] && [ "$optimized_size" -gt 0 ]; then
                 savings=$((original_size - optimized_size))
                 savings_percent=$((savings * 100 / original_size))
-                echo "    ✅ Saved: ${savings_percent}% (${savings} bytes)"
+                echo "    ✅ Saved: ${savings_percent}% (${savings} bytes) - Quality: 90% JPEG"
             fi
         else
             echo "  ⏭️  Skipping: $filename (already optimized)"
@@ -78,5 +94,6 @@ echo "💡 Pro Tips:"
 echo "- Run this script after adding new images"
 echo "- The script only processes new/changed images"
 echo "- All optimized images are saved in 'images/optimized/'"
+echo "- Quality settings: 90% JPEG, max 2000px width/height"
 echo ""
 echo "🚀 Your website is now optimized and ready to deploy!"
