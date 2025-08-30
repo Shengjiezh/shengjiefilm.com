@@ -100,11 +100,11 @@
     <!-- Mobile menu -->
     <div id="mobile-menu" class="sm:hidden hidden bg-white border-t border-subtle">
       <div class="px-6 py-4 space-y-4">
-        <a href="index.html#portfolio" class="block text-sm font-medium hover:text-muted transition-colors duration-200" onclick="handleMobileNav('portfolio')">Portfolio</a>
-        <a href="index.html#prints" class="block text-sm font-medium hover:text-muted transition-colors duration-200" onclick="handleMobileNav('prints')">Prints</a>
-        <a href="index.html#travel" class="block text-sm font-medium hover:text-muted transition-colors duration-200" onclick="handleMobileNav('travel')">Travel</a>
-        <a href="index.html#about" class="block text-sm font-medium hover:text-muted transition-colors duration-200" onclick="handleMobileNav('about')">About</a>
-        <a href="index.html#contact" class="block text-sm font-medium hover:text-muted transition-colors duration-200" onclick="handleMobileNav('contact')">Contact</a>
+        <a href="#" class="block text-sm font-medium hover:text-muted transition-colors duration-200" onclick="handleMobileNav('portfolio', event)">Portfolio</a>
+        <a href="#" class="block text-sm font-medium hover:text-muted transition-colors duration-200" onclick="handleMobileNav('prints', event)">Prints</a>
+        <a href="#" class="block text-sm font-medium hover:text-muted transition-colors duration-200" onclick="handleMobileNav('travel', event)">Travel</a>
+        <a href="#" class="block text-sm font-medium hover:text-muted transition-colors duration-200" onclick="handleMobileNav('about', event)">About</a>
+        <a href="#" class="block text-sm font-medium hover:text-muted transition-colors duration-200" onclick="handleMobileNav('contact', event)">Contact</a>
       </div>
     </div>
     </div>
@@ -323,7 +323,12 @@
       `;
     }
     
-    function handleMobileNav(sectionId) {
+    function handleMobileNav(sectionId, event) {
+      // Prevent default link behavior
+      if (event) {
+        event.preventDefault();
+      }
+      
       // Close mobile menu
       closeMobileMenu();
       
