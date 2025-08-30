@@ -62,22 +62,24 @@
     }
     
     .modal-content {
-      position: relative;
-      margin: auto;
-      display: block;
-      max-width: 70%;
-      max-height: 95%;
+      position: absolute;
       top: 50%;
-      transform: translateY(-50%);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 95vw;
+      max-height: 95vh;
+      padding: 20px;
     }
     
     .modal-image {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
       max-width: 100%;
       max-height: 100%;
+      object-fit: contain;
       display: block;
+      border-radius: 4px;
     }
     
     .close {
@@ -113,6 +115,25 @@
         <a href="#about" class="hover:text-muted transition-colors duration-200">About</a>
         <a href="#contact" class="hover:text-muted transition-colors duration-200">Contact</a>
       </nav>
+      
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-button" class="sm:hidden flex items-center p-2" onclick="toggleMobileMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="sm:hidden hidden bg-white border-t border-subtle">
+      <div class="px-6 py-4 space-y-4">
+        <a href="#portfolio" class="block text-sm font-medium hover:text-muted transition-colors duration-200" onclick="closeMobileMenu()">Portfolio</a>
+        <a href="#prints" class="block text-sm font-medium hover:text-muted transition-colors duration-200" onclick="closeMobileMenu()">Prints</a>
+        <a href="#travel" class="block text-sm font-medium hover:text-muted transition-colors duration-200" onclick="closeMobileMenu()">Travel</a>
+        <a href="#about" class="block text-sm font-medium hover:text-muted transition-colors duration-200" onclick="closeMobileMenu()">About</a>
+        <a href="#contact" class="block text-sm font-medium hover:text-muted transition-colors duration-200" onclick="closeMobileMenu()">Contact</a>
+      </div>
+    </div>
     </div>
   </header>
 
@@ -333,7 +354,7 @@
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="text-4xl sm:text-5xl font-light mb-6 text-primary">Say hello</h2>
       <p class="text-muted text-lg mb-16">Bookings, print questions, or just leave me a note. I read every message.</p>
-      <form action="https://formspree.io/f/your_action_id" method="POST" class="space-y-8">
+      <form action="https://formspree.io/f/mpwjpkzw" method="POST" class="space-y-8">
         <div class="grid sm:grid-cols-2 gap-8">
           <input required name="name" placeholder="Your name" class="w-full border-b border-subtle bg-transparent px-0 py-4 text-primary placeholder-muted focus:outline-none focus:border-primary transition-colors" />
           <input required name="email" type="email" placeholder="Email" class="w-full border-b border-subtle bg-transparent px-0 py-4 text-primary placeholder-muted focus:outline-none focus:border-primary transition-colors" />
@@ -393,6 +414,9 @@
         selectedSection.classList.remove('hidden');
       }
       
+      // Update URL hash to reflect current section
+      window.location.hash = '#' + sectionId;
+      
       // Update active navigation state
       const navLinks = document.querySelectorAll('nav a');
       navLinks.forEach(link => {
@@ -431,9 +455,23 @@
         showSection(storedTab);
         localStorage.removeItem('activeTab'); // Clear the stored state
       } else {
-        // Show portfolio by default
-        showSection('portfolio');
+        // Check if there's a hash in the URL
+        const hash = window.location.hash.substring(1);
+        if (hash && ['portfolio', 'prints', 'travel', 'about', 'contact'].includes(hash)) {
+          showSection(hash);
+        } else {
+          // Show portfolio by default
+          showSection('portfolio');
+        }
       }
+      
+      // Listen for hash changes (when logo is clicked or browser back/forward)
+      window.addEventListener('hashchange', function() {
+        const hash = window.location.hash.substring(1);
+        if (hash && ['portfolio', 'prints', 'travel', 'about', 'contact'].includes(hash)) {
+          showSection(hash);
+        }
+      });
     });
       
       // Modal functions
@@ -465,6 +503,43 @@
           closeModal();
         }
       });
+      
+      // Mobile menu functions
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        
+        if (mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.remove('hidden');
+          // Change hamburger to X
+          mobileMenuButton.innerHTML = `
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          `;
+        } else {
+          mobileMenu.classList.add('hidden');
+          // Change X back to hamburger
+          mobileMenuButton.innerHTML = `
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          `;
+        }
+      }
+      
+      function closeMobileMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        
+        mobileMenu.classList.add('hidden');
+        // Change X back to hamburger
+        mobileMenuButton.innerHTML = `
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        `;
+      }
     </script>
 
 </body>
