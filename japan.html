@@ -72,7 +72,50 @@
     }
     
     .close:hover,
-    .close:focus {
+    
+    /* Navigation arrows */
+    .modal-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 15px 12px;
+      cursor: pointer;
+      font-size: 24px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      z-index: 1001;
+    }
+    
+    .modal-nav:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    
+    .modal-nav.prev {
+      left: 20px;
+    }
+    
+    .modal-nav.next {
+      right: 20px;
+    }
+    
+    /* Hide navigation on mobile */
+    @media (max-width: 768px) {
+      .modal-nav {
+        padding: 10px 8px;
+        font-size: 18px;
+      }
+      
+      .modal-nav.prev {
+        left: 10px;
+      }
+      
+      .modal-nav.next {
+        right: 10px;
+      }
+    }    .close:focus {
       color: #bbb;
       text-decoration: none;
     }
@@ -175,7 +218,11 @@
 
   <!-- Modal -->
   <div id="imageModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
+    <span class="close" onclick="closeModal()"><span class="close" onclick="closeModal()"><span class="close" onclick="closeModal()">&times;</span>times;</span>
+    <button class="modal-nav prev" onclick="navigateModal(-1)">‹</button>
+    <button class="modal-nav next" onclick="navigateModal(1)">›</button>times;</span>
+    <button class="modal-nav prev" onclick="navigateModal(-1)">‹</button>
+    <button class="modal-nav next" onclick="navigateModal(1)">›</button>
     <div class="modal-content">
       <img id="modalImage" class="modal-image" src="" alt="Enlarged photo">
     </div>
