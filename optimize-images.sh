@@ -75,7 +75,7 @@ optimize_portfolio_images() {
     mkdir -p "images/optimized"
     
     # Process portfolio images in numerical order (1.jpg, 2.jpg, etc.)
-    for i in {1..19}; do
+    for i in {1..20}; do
         source_file="images/$i.jpg"
         target_file="images/optimized/$i.jpg"
         
