@@ -345,7 +345,7 @@
     
     function setupModalNavigation(imageSrc) {
       // Get all images within the gallery grid
-      const galleryGrid = document.querySelector('.grid');
+      const galleryGrid = document.querySelector('.grid.grid-cols-1');
       const images = galleryGrid ? galleryGrid.querySelectorAll('img') : [];
       currentImageList = Array.from(images).map(img => img.src);
       currentImageIndex = currentImageList.indexOf(imageSrc);

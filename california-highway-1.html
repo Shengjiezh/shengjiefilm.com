@@ -354,17 +354,13 @@
     }
     
     function setupModalNavigation(imageSrc) {
-      // Get all images within the gallery grid
-      const galleryGrid = document.querySelector('.grid');
-      const images = galleryGrid ? galleryGrid.querySelectorAll('img') : [];
+      // Find all image elements on this page
+      const images = document.querySelectorAll('img[src*="images/optimized"]');
       currentImageList = Array.from(images).map(img => img.src);
-      currentImageIndex = currentImageList.indexOf(imageSrc);
       
-      console.log('Modal navigation setup:', {
-        totalImages: currentImageList.length,
-        currentIndex: currentImageIndex,
-        currentImage: imageSrc
-      });
+      // Find current image index
+      currentImageIndex = currentImageList.indexOf(imageSrc);
+      if (currentImageIndex === -1) currentImageIndex = 0;
       
       updateNavigationButtons();
     }
